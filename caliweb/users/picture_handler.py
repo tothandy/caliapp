@@ -12,7 +12,7 @@ def add_profile_pic(pic_upload, username):
     # save as username.jpg
     storage_filename = str(username)+ '.' +ext_type
 
-    filepath = os.path.join(current_app.root_path, 'static\profile_pics', storage_filename)'
+    filepath = os.path.join(current_app.root_path, 'static/profile_pics', storage_filename)
 
     output_size = (200, 200)
 

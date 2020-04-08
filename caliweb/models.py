@@ -49,14 +49,14 @@ class Workout(db.Model):
     def __repr__(self):
         return f"Post ID: {self.id} -- Date: {self.date} ---{self.title}"
 
-    class Exercise(db.Model):
-        
-        users = db.relationship(User)
+class Exercise(db.Model):
+    
+    users = db.relationship(User)
 
-        id = db.Column(db.Integer, primary_key=True)
-        user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-        
-        name = db.Column(db.String(240), nullable=False)
-        muscle = db.Column(db.String(240), nullable=False)
-        description = db.Column(db.Text, nullable=False)
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    
+    name = db.Column(db.String(240), nullable=False)
+    muscle = db.Column(db.String(240), nullable=False)
+    description = db.Column(db.Text, nullable=False)
 
