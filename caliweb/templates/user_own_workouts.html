@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <div align='center'>
+            <h1>Welcome to the page for {{user.username}}</h1>
+            <img src="{{url_for('static', filename='profile_pics/' +user.profile_image)}}">
+        </div>
+    </div>
+
+{% for post in own_workouts.items %}
+    <h2> <a href="{{url_for('own_workouts.own_workout', own_workout_id=post.id) }}">{{post.title}}</a> </h2>
+    Created by: <a href="{{url_for('users.user_workouts', username=post.author.username) }}">{{post.author.username}}</a>
+    <p class='text-muted'>Published on: {{post.date.strftime("%Y-%m-%d")}}</p>
+    <br>
+    <p>{{post.text}}</p>
+    <br>
+{% endfor %}
+</div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        {# http://flask.pocoo.org/snippets/44/ #}
+
+        {% for page_num in own_workouts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+            {% if own_workouts.page == page_num %}
+            <li class="page-item disabled">
+                <a class="page-link" href="{{ url_for('users.user_workouts', username=user.username, page=page_num) }}">{{ page_num }}</a></li>
+            </li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="{{ url_for('users.user_workouts', username=user.username, page=page_num) }}">{{ page_num }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
+
+{% endblock %}
