@@ -33,3 +33,6 @@ app.register_blueprint(error_pages)
 
 from caliweb.users.views import users
 app.register_blueprint(users)
+
+from caliweb.workouts.views import own_workouts
+app.register_blueprint(own_workouts)
