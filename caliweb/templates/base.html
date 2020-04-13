@@ -30,7 +30,7 @@
             <a href="{{ url_for('users.account') }}">Account</a>
         </li>
         <li class='nav-link'>
-            <a href="#">Create Workout</a>
+            <a href="{{ url_for('own_workouts.create_post') }}">Create Workout</a>
         </li>
 
         {% else %}
