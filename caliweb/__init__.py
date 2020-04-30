@@ -36,3 +36,4 @@ app.register_blueprint(users)
 
 from caliweb.workouts.views import own_workouts
 app.register_blueprint(own_workouts)
+

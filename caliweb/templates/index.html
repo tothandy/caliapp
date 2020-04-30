@@ -16,7 +16,7 @@
 
 
         <h2><a class="card-title" href="  {{ url_for('own_workouts.own_workout', own_workout_id=post.id) }}">{{ post.title }}</a></h2>
-        <a href="{{ url_for('users.user_workouts', username=post.author.username) }}">Created by: {{ post.author.username }}</a>
+        Created by: <a href="{{ url_for('users.user_workouts', username=post.author.username) }}">{{ post.author.username }}</a>
         <p>Published on: {{ post.date.strftime('%Y-%m-%d') }}</p>
         <p class="card-text">{{ post.text[:100] }}...</p>
         <a href="{{ url_for('own_workouts.own_workout', own_workout_id=post.id) }}" class="btn btn-primary">Check Workout</a>
