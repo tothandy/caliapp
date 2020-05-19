@@ -3,3 +3,4 @@
 secrets.txt 
 env 
 venv
+__pycache__
