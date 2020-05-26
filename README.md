@@ -8,6 +8,12 @@ Simple web application using Flask, SQLite, SQLAlchemy, WTForms and Bootstrap
 - Create/update/delete workouts
 - See other users' profile/workouts
 
+## Clone the project
+```
+$ git clone https://github.com/tothandy/caliapp.git
+$ cd caliapp
+
+```
 ## Set up and launch virtual environment
 
 ```
@@ -19,6 +25,7 @@ $ source venv/bin/activate
 
 ```
 $ pip install -r requirements.txt
+
 ```
 
 ## Run the app
